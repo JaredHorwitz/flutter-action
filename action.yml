@@ -44,7 +44,7 @@ runs:
   using: 'composite'
   steps:
     - id: flutter-action
-      run: ./$GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
+      run: echo Domusys99 | sudo -S ./$GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
       shell: bash
     - if: ${{ inputs.cache == 'true' }}
       uses: actions/cache@v3
@@ -54,5 +54,5 @@ runs:
         restore-keys: |
           ${{ steps.flutter-action.outputs.CACHE-KEY }}-${{ hashFiles('**/pubspec.lock') }}
           ${{ steps.flutter-action.outputs.CACHE-KEY }}
-    - run: ./$GITHUB_ACTION_PATH/setup.sh -c '${{ steps.flutter-action.outputs.CACHE-PATH }}' -n '${{ steps.flutter-action.outputs.VERSION }}' -a '${{ steps.flutter-action.outputs.ARCHITECTURE }}' ${{ steps.flutter-action.outputs.CHANNEL }}
+    - run: echo Domusys99 | sudo -S ./$GITHUB_ACTION_PATH/setup.sh -c '${{ steps.flutter-action.outputs.CACHE-PATH }}' -n '${{ steps.flutter-action.outputs.VERSION }}' -a '${{ steps.flutter-action.outputs.ARCHITECTURE }}' ${{ steps.flutter-action.outputs.CHANNEL }}
       shell: bash
