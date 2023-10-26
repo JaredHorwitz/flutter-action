@@ -1,6 +1,6 @@
 name: 'Flutter action'
 description: 'Setup your runner with Flutter environment'
-author: 'Alif Rachmawadi'
+author: 'OG - Alif Rachmawadi, edited by Jared Horwitz'
 branding:
   icon: 'maximize'
   color: 'blue'
@@ -43,8 +43,8 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - id: recon
-      run: ls -al $GITHUB_ACTION_PATH; chmod +x $GITHUB_ACTION_PATH/setup.sh
+    - id: chmodx
+      run: chmod +x $GITHUB_ACTION_PATH/setup.sh
       shell: bash
     - id: flutter-action
       run: $GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
