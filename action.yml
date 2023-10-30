@@ -55,6 +55,7 @@ runs:
         apt-get install -y jq
         apt-get install -y xz-utils
         apt-get install -y git
+        git config --global --add safe.directory /opt/hostedtoolcache/flutter/stable-3.13.9-x64
       shell: bash
     - id: flutter-action
       run: $GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
