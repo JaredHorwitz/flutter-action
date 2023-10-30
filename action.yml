@@ -49,12 +49,12 @@ runs:
     - id: get-jq
       run: |
         apt-get update
-        apt-get install dialog
-        apt-get install apt-utils
+        apt-get install -y dialog
+        apt-get install -y apt-utils
         apt-get install -y curl
         apt-get install -y jq
-        apt-get install xz-utils
-        apt-get install git
+        apt-get install -y xz-utils
+        apt-get install -y git
       shell: bash
     - id: flutter-action
       run: $GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
