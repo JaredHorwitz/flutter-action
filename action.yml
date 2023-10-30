@@ -49,6 +49,7 @@ runs:
     - id: get-jq
       run: |
         apt-get update
+        apt-get install apt-utils
         apt-get install -y curl
         apt-get install -y jq
         apt-get install xz-utils
