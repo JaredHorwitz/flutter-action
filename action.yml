@@ -46,7 +46,7 @@ runs:
     - id: chmodx
       run: chmod +x $GITHUB_ACTION_PATH/setup.sh
       shell: bash
-    - id: get jq
+    - id: get-jq
       run: apt-get install jq
       shell: bash
     - id: flutter-action
