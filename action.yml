@@ -48,7 +48,7 @@ runs:
       shell: bash
     - id: get-jq
       run: |
-        apt-update
+        apt-get update
         apt-get install -y jq
       shell: bash
     - id: flutter-action
