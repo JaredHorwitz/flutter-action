@@ -46,6 +46,9 @@ runs:
     - id: chmodx
       run: chmod +x $GITHUB_ACTION_PATH/setup.sh
       shell: bash
+    - id: get jq
+      run: apt-get install jq
+      shell: bash
     - id: flutter-action
       run: $GITHUB_ACTION_PATH/setup.sh -p -c '${{ inputs.cache-path }}' -k '${{ inputs.cache-key }}' -n '${{ inputs.flutter-version }}' -a '${{ inputs.architecture }}' ${{ inputs.channel }}
       shell: bash
